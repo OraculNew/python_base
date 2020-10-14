@@ -19,12 +19,15 @@ days: int = 1
 first_km = input("Введите сколько киломметров пробежал спортсмен в первый день\n>>>:")
 end_km = input("Введите сколько киломметров необходимо пробежать спортсмену\n>>>:")
 
+print("Результат:")
+print(f"1-й день: {first_km}")
 if first_km and end_km:
     first_km = float(first_km)
     end_km = float(end_km)
     result = first_km
     while result < end_km:
         days = days + 1
-        result = first_km + (result * 1.1)
+        result = result * 1.1
+        print(f"{days}-й день: {result:0.2f}")
 
-print(f"{days}-й день окончание пробежки")
+print(f"Ответ: на {days}-й день спортсмен достиг результата — не менее {end_km:0.0f} км")
