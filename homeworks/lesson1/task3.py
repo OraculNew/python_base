@@ -6,13 +6,9 @@ PEP-8
 Считаем 3 + 33 + 333 = 369.
 """
 
-# Объявление переменных
-n: int = 0
-summa: int = 0
-
 # Код программы
 n = input("Введите целое число \n>>>:")
 
-if n and type(n) == str:
+if n:
     summa = int(n)+int(n*2)+int(n*3)
     print(summa)

@@ -6,14 +6,8 @@ PEP-8
 Используйте форматирование строк.
 """
 
-# Объявление переменных
-seconds: int = 0
-hours: int = 0
-minutes: int = 0
-sec: int = 0
-step = 60
-
 # Код программы
+step = 60
 seconds = input("Введите время в секундах\n>>>:")
 
 hours = int(seconds) // (step * step)
