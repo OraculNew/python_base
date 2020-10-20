@@ -36,8 +36,8 @@ else:
     else:
         n = 0
         while 1:
-            n = n - 1
-            if new_rating >= var_list[-n]:
-                var_list.insert(n-1, new_rating)
+            if new_rating >= var_list[n]:
+                var_list.insert(n, new_rating)
                 break
-print(var_list)
+            n = n + 1
+    print(var_list)
