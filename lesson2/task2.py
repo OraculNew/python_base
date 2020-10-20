@@ -7,8 +7,8 @@ PEP-8
 необходимо использовать функцию input().
 """
 # Код программы
-text_list = input("Введите значения списка через символ #\n>>>")
-var_list = text_list.split("#")
+text_list = input("Введите значения списка через пробел\n>>>")
+var_list = text_list.split(" ")
 print(var_list)
 n = 0
 for item in var_list[1::2]:
