@@ -52,5 +52,4 @@ for item in products_list:
 # Удаляем дубли значений свойств
 for item_result in new_dict:
     new_dict[item_result] = set(new_dict[item_result])
-
 print(new_dict)
