@@ -11,8 +11,8 @@ PEP-8
 def chek_float(x):
     """
     Функция проверяет возможность преобразования значения к числу
-    :param x:
-    :return type bool:
+    :param x: any type
+    :return: type bool
     """
 
     result = bool(0)
