@@ -33,5 +33,5 @@ def my_map(used_func, iter_obj):
 
 param = input('Введите строку из слов, разделенных пробелом\n>>>')
 my_list = param.split()
-result = list(my_map(int_func(' '), my_list))
+result = list(my_map(int_func, my_list))
 print(*result)
