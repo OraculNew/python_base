@@ -28,7 +28,7 @@ def my_map(used_func, iter_obj):
     :return:
     """
     for itm in iter_obj:
-        yield int_func(itm)
+        yield used_func(itm)
 
 
 param = input('Введите строку из слов, разделенных пробелом\n>>>')
