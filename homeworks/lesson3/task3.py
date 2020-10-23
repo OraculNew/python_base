@@ -51,11 +51,12 @@ def my_func(x, y, z):
 
 
 param_list = list()
+max_value = 3
 while True:
-    param = input(f"Осталось ввести чисел: {3 - len(param_list)} \n>>>")
+    param = input(f"Осталось ввести чисел: {max_value - len(param_list)} \n>>>")
     if chek_float(param):
         param_list.append(float(param))
-    if len(param_list) == 3:
+    if len(param_list) == max_value:
         break
 
 print(my_func(param_list[0], param_list[1], param_list[2]))
