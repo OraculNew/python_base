@@ -8,3 +8,5 @@ PEP-8
 Результат: [23, 1, 3, 10, 4, 11]
 """
 # Код программы
+param_list = [2, 2, 2, 7, 23, 1, 44, 44, 3, 2, 10, 7, 4, 11]
+print(list(itm for itm in param_list if param_list.count(itm) == 1))

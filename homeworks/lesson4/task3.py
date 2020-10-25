@@ -1,3 +1,4 @@
+import homeworks.lesson4.my_func as mf
 """
 PEP-8
 """
@@ -6,4 +7,4 @@ PEP-8
 Подсказка: использовать функцию range() и генератор.
 """
 # Код программы
-print()
+print(list(itm for itm in mf.my_range(20, 241) if not itm % 20 or not itm % 21))

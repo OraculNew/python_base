@@ -8,3 +8,9 @@ def my_range(begin, end, step=1):
     while begin < end:
         yield begin
         begin += step
+
+
+def my_reduce(func, list_obj):
+    while len(list_obj) > 1:
+        list_obj = [func(list_obj[0], list_obj[1])] + list_obj[2:]
+    return list_obj
