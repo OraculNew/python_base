@@ -1,5 +1,5 @@
 from sys import argv
-from itertools import cycle, count
+from itertools import cycle
 
 """
 PEP-8
@@ -14,18 +14,11 @@ PEP-8
 также необходимо предусмотреть условие, при котором повторение элементов списка будет прекращено.
 """
 # Код программы
-script_name, first_param, second_param = argv
+script_name = argv
 
-
-for value in count(int(first_param)):
-    print(value)
-    if value > int(second_param):
-        break
-
-
-col = int(first_param)
+col = 0
 for value in cycle(list("ABC")):
     print(value)
     col += 1
-    if col > int(second_param):
+    if col > 20:
         break
