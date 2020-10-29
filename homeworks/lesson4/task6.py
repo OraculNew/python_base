@@ -1,3 +1,6 @@
+from functools import reduce
+import re
+import homeworks.lesson4.my_func as mf
 """
 PEP-8
 """
@@ -15,3 +18,27 @@ PEP-8
 {“Информатика”: 170, “Физика”: 40, “Физкультура”: 30}
 """
 # Код программы
+
+
+def read_numbers(param):
+    """
+    Возвращает список чисел встречающихся в строке. Вычисляется регулярными выражениями
+    :param param: строка в которой производится поиск чисел
+    :return: список с числами
+    """
+    list_values = re.findall(r"[0-9]+", param)
+    return list_values
+
+
+lessons = dict()
+with open("file_task6.txt", "r", encoding="UTF-8") as my_file:
+    while True:
+        content = my_file.readline()
+        if not content:
+            break
+        lessons_key = ''.join(content.split(":")[0])
+        values_list = read_numbers(content)
+        values = [mf.to_int(value) for value in values_list]
+        hours_value = reduce(lambda val, agg: agg + val, values)
+        lessons.setdefault(lessons_key, hours_value)
+print(lessons)
