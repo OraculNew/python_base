@@ -1,6 +1,6 @@
 import random
 from functools import reduce
-import homeworks.lesson4.my_func as mf
+import homeworks.lesson5.my_func as mf
 """
 PEP-8
 """
