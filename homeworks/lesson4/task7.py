@@ -1,3 +1,6 @@
+import json
+from functools import reduce
+import homeworks.lesson4.my_func as mf
 """
 PEP-8
 """
@@ -17,3 +20,30 @@ PEP-8
 Подсказка: использовать менеджеры контекста.
 """
 # Код программы
+firms = dict()
+profit_list = list()
+with open("file_task7.txt", "r", encoding="UTF-8") as my_file:
+    while True:
+        content = my_file.readline()
+        if not content:
+            break
+        content_list = content.split(" ")
+        firm_key = "".join(content_list[1]) + " " + "".join(content_list[0])
+        values_list = content_list[2:]
+        values = [mf.to_float(value) for value in values_list]
+        profit = reduce(lambda val, agg: val - agg, values)
+        firms.setdefault(firm_key, profit)
+        if profit > 0:
+            profit_list.append(profit)
+
+if len(profit_list):
+    average_profit = reduce(lambda val, agg: val + agg, profit_list) / len(profit_list)
+else:
+    average_profit = 0
+
+result_list = list()
+result_list.append(firms)
+result_list.append({"average_profit": average_profit})
+
+with open('file_task7.json', 'w', encoding='UTF-8') as my_file:
+    json.dump(result_list, my_file, ensure_ascii=False, indent=1)
