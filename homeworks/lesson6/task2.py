@@ -10,3 +10,24 @@ PEP-8
 Например: 20м * 5000м * 25кг * 5см = 12500 т
 """
 # Код программы
+
+
+class Road:
+    _length = 0
+    _width = 0
+
+    def __init__(self, _length, _width):
+        """Определяет дорогу с шириной и длиной
+        :param _length: длина дороги
+        :param _width: ширина дороги
+        """
+        self._length = _length
+        self._width = _width
+
+    def calc(self, weight, height):
+        """Рассчитывает массу асфальта, необходимого для укладки полотна с требуемой толщиной, по заданной массе на см2.
+        :param weight: масса асфальта на 1см2
+        :param height: требуемая толщина покрытия
+        """
+        result = self._length * self._width * height * weight
+        print(f"Рассчет массы асфальта: {self._width}м * {self._length}м * {weight}кг * {height}см = {result//1000} т")
