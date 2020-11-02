@@ -52,3 +52,7 @@ class TrafficLight:
         inx += 1
         self.__current_value = inx
         self.switch_to()
+
+
+lighting = TrafficLight()
+lighting.switch_to()

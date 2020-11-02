@@ -9,3 +9,39 @@ Handle (маркер). В каждом из классов реализоват�
 экземпляра.
 """
 # Код программы
+
+
+class Stationery:
+    title = ""
+
+    def __init__(self, title):
+        self.title = title
+
+    def draw(self):
+        print("Запуск отрисовки.")
+
+
+class Pen(Stationery):
+    def draw(self):
+        print(f"Рисует {self.title}")
+
+
+class Pencil(Stationery):
+    def draw(self):
+        print(f"Рисует {self.title}")
+
+
+class Handle(Stationery):
+    def draw(self):
+        print(f"Рисует {self.title}")
+
+
+new_stationery = Stationery("Канцелярская принадлежность")
+new_pen = Pen("Ручка")
+new_pencil = Pencil("Карандаш")
+new_handle = Handle("Маркер")
+
+new_stationery.draw()
+new_pen.draw()
+new_pencil.draw()
+new_handle.draw()
