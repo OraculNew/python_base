@@ -29,8 +29,8 @@ class Road:
         :param weight: масса асфальта на 1см2
         :param height: требуемая толщина покрытия
         """
-        result = self._length * self._width * height * weight
-        print(f"Рассчет массы асфальта: {self._width}м * {self._length}м * {weight}кг * {height}см = {result//1000}т")
+        result = self._length * self._width * height * weight/1000
+        print(f"Рассчет массы асфальта: {self._width}м * {self._length}м * {weight}кг * {height}см = {result}т")
 
 
 new_road = Road(int(input("Введите протяженность дороги в метрах\n>>>")),

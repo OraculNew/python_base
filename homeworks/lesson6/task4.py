@@ -46,6 +46,8 @@ class TownCar(Car):
     def show_speed(self):
         if self.speed > 60:
             print(f"Автомобиль {self.name} движется с превышением скорости {self.speed} км/ч")
+        else:
+            print(f"Автомобиль {self.name} едет со скоростью {self.speed} км/ч")
 
 
 class SportCar(Car):
@@ -57,6 +59,8 @@ class WorkCar(Car):
     def show_speed(self):
         if self.speed > 40:
             print(f"Автомобиль {self.name} движется с превышением скорости {self.speed} км/ч")
+        else:
+            print(f"Автомобиль {self.name} едет со скоростью {self.speed} км/ч")
 
 
 class PoliceCar(Car):
@@ -64,7 +68,7 @@ class PoliceCar(Car):
         super().show_speed()
 
 
-new_town_car = TownCar(72, "Blue", "Lada", bool(0))
+new_town_car = TownCar(35, "Blue", "Lada", bool(0))
 
 new_sport_car = SportCar(135, "Red", "Ferrari", bool(0))
 
