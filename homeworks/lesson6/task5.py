@@ -36,12 +36,12 @@ class Handle(Stationery):
         print(f"Рисует {self.title}")
 
 
-new_stationery = Stationery("Канцелярская принадлежность")
-new_pen = Pen("Ручка")
-new_pencil = Pencil("Карандаш")
-new_handle = Handle("Маркер")
-
-new_stationery.draw()
-new_pen.draw()
-new_pencil.draw()
-new_handle.draw()
+if __name__ == "__main__":
+    new_stationery = Stationery("Канцелярская принадлежность")
+    new_pen = Pen("Ручка")
+    new_pencil = Pencil("Карандаш")
+    new_handle = Handle("Маркер")
+    new_stationery.draw()
+    new_pen.draw()
+    new_pencil.draw()
+    new_handle.draw()

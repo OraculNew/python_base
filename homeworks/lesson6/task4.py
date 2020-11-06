@@ -68,41 +68,37 @@ class PoliceCar(Car):
         super().show_speed()
 
 
-new_town_car = TownCar(35, "Blue", "Lada", bool(0))
+if __name__ == "__main__":
+    new_town_car = TownCar(35, "Blue", "Lada", bool(0))
+    new_sport_car = SportCar(135, "Red", "Ferrari", bool(0))
+    new_work_car = WorkCar(55, "Yellow", "Feat", bool(0))
+    new_police_car = PoliceCar(90, "Black/White", "Ford", bool(1))
+    garage = {"Городской автомобиль": new_town_car,
+              "Спортивный автомобиль": new_sport_car,
+              "Рабочий автомобиль": new_work_car,
+              "Полицейский автомобиль": new_police_car}
+    print(f"Выберите автомобиль из гаража:")
+    inx = 0
+    garage_list = list()
+    for key, value in garage.items():
+        inx += 1
+        garage_list.append(value)
+        print(f"{inx}. {key}")
 
-new_sport_car = SportCar(135, "Red", "Ferrari", bool(0))
+    nom = int(input("Укажите выбранный номер автомабиля из гаража\n>>>"))
+    current_auto = ""
+    if (nom > 0) and (nom <= len(garage_list)):
+        current_auto = garage_list[nom-1]
+        print(f"Вы выбрали автомобиль:\n"
+              f"name {current_auto.name}\n"
+              f"color {current_auto.color}\n"
+              f"speed {current_auto.speed}\n"
+              f"is_police {current_auto.is_police}")
+    else:
+        exit()
 
-new_work_car = WorkCar(55, "Yellow", "Feat", bool(0))
-
-new_police_car = PoliceCar(90, "Black/White", "Ford", bool(1))
-
-garage = {"Городской автомобиль": new_town_car,
-          "Спортивный автомобиль": new_sport_car,
-          "Рабочий автомобиль": new_work_car,
-          "Полицейский автомобиль": new_police_car}
-
-print(f"Выберите автомобиль из гаража:")
-inx = 0
-garage_list = list()
-for key, value in garage.items():
-    inx += 1
-    garage_list.append(value)
-    print(f"{inx}. {key}")
-
-nom = int(input("Укажите выбранный номер автомабиля из гаража\n>>>"))
-current_auto = ""
-if (nom > 0) and (nom <= len(garage_list)):
-    current_auto = garage_list[nom-1]
-    print(f"Вы выбрали автомобиль:\n"
-          f"name {current_auto.name}\n"
-          f"color {current_auto.color}\n"
-          f"speed {current_auto.speed}\n"
-          f"is_police {current_auto.is_police}")
-else:
-    exit()
-
-current_auto.go()
-current_auto.show_speed()
-current_auto.turn(1)
-current_auto.turn(0)
-current_auto.stop()
+    current_auto.go()
+    current_auto.show_speed()
+    current_auto.turn(1)
+    current_auto.turn(0)
+    current_auto.stop()

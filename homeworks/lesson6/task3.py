@@ -45,10 +45,10 @@ class Position(Worker):
         return super()._income["wage"] + super()._income["bonus"]
 
 
-new_worker = Position(input("Введите Имя сотрудника\n>>>"),
-                      input("Введите Фамилию сотрудника\n>>>"),
-                      input("Введите Должность сотрудника\n>>>"),
-                      int(input("Введите Оклад сотрудника\n>>>")),
-                      int(input("Введите Премию сотрудника\n>>>")),)
-
-print(f"Создан новый сотрудник {new_worker.get_full_name()} на зарплату {new_worker.get_total_income()}")
+if __name__ == "__main__":
+    new_worker = Position(input("Введите Имя сотрудника\n>>>"),
+                          input("Введите Фамилию сотрудника\n>>>"),
+                          input("Введите Должность сотрудника\n>>>"),
+                          int(input("Введите Оклад сотрудника\n>>>")),
+                          int(input("Введите Премию сотрудника\n>>>")),)
+    print(f"Создан новый сотрудник {new_worker.get_full_name()} на зарплату {new_worker.get_total_income()}")

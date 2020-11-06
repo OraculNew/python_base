@@ -54,5 +54,6 @@ class TrafficLight:
         self.switch_to()
 
 
-lighting = TrafficLight()
-lighting.switch_to()
+if __name__ == "__main__":
+    lighting = TrafficLight()
+    lighting.switch_to()
