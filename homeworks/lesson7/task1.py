@@ -63,27 +63,30 @@ class Matrix:
         """Суммирует две матрицы одинакового порядка
         :return: возвращает матрицу
         """
-        row = len(self.matrix)
-        x = 0
-        new_row = []
-        while x < row:
-            col = len(self.matrix[x])
-            y = 0
-            new_col = []
-            while y < col:
-                new_col.append(self.matrix[x][y] + other.matrix[x][y])
-                y += 1
-            new_row.append(new_col)
-            x += 1
-        return Matrix(new_row)
+        if len(self.matrix) == len(other.matrix) and len(self.matrix[0]) == len(other.matrix[0]):
+            row = len(self.matrix)
+            x = 0
+            new_row = []
+            while x < row:
+                col = len(self.matrix[x])
+                y = 0
+                new_col = []
+                while y < col:
+                    new_col.append(self.matrix[x][y] + other.matrix[x][y])
+                    y += 1
+                new_row.append(new_col)
+                x += 1
+            return Matrix(new_row)
+        raise ValueError('Матрицы не одинакового порядка')
 
 
-matrix1 = Matrix(new_matrix(5, 4))
-matrix2 = Matrix(new_matrix(5, 4))
-print("matrix1")
-print(matrix1)
-print("matrix2")
-print(matrix2)
-matrix3 = Matrix.__add__(matrix1, matrix2)
-print("matrix3")
-print(matrix3)
+if __name__ == "__main__":
+    matrix1 = Matrix(new_matrix(5, 4))
+    matrix2 = Matrix(new_matrix(5, 4))
+    print("matrix1")
+    print(matrix1)
+    print("matrix2")
+    print(matrix2)
+    matrix3 = Matrix.__add__(matrix1, matrix2)
+    print("matrix3")
+    print(matrix3)

@@ -68,22 +68,17 @@ class Cell:
         return f_str
 
 
-cell1 = Cell(6)
-print(cell1)
-
-cell2 = Cell(6)
-print(cell2)
-
-cell3 = Cell.__add__(cell1, cell2)
-print(cell3)
-
-cell4 = Cell.__sub__(cell3, cell2)
-print(cell4)
-
-cell5 = Cell.__mul__(cell3, cell4)
-print(cell5)
-
-cell6 = Cell.__truediv__(cell5, cell4)
-print(cell6)
-
-print(Cell.make_order(cell6, 5))
+if __name__ == "__main__":
+    cell1 = Cell(6)
+    print(cell1)
+    cell2 = Cell(6)
+    print(cell2)
+    cell3 = Cell.__add__(cell1, cell2)
+    print(cell3)
+    cell4 = Cell.__sub__(cell3, cell2)
+    print(cell4)
+    cell5 = Cell.__mul__(cell3, cell4)
+    print(cell5)
+    cell6 = Cell.__truediv__(cell5, cell4)
+    print(cell6)
+    print(Cell.make_order(cell6, 5))

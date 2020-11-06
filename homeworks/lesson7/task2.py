@@ -71,13 +71,13 @@ class Suit(Clothes):
         return self.calc()
 
 
-clothes1 = Coat("Пальто", 23)
-clothes2 = Suit("Пиджак маленький", 172)
-clothes3 = Suit("Пиджак средний", 185)
-clothes4 = Suit("Пиджак большой", 195)
-
-print(clothes1.expenditure)
-print(clothes2.expenditure)
-print(clothes3.expenditure)
-print(clothes4.expenditure)
-print(f"Итого:\n{Clothes().expenditure}")
+if __name__ == "__main__":
+    clothes1 = Coat("Пальто", 23)
+    clothes2 = Suit("Пиджак маленький", 172)
+    clothes3 = Suit("Пиджак средний", 185)
+    clothes4 = Suit("Пиджак большой", 195)
+    print(clothes1.expenditure)
+    print(clothes2.expenditure)
+    print(clothes3.expenditure)
+    print(clothes4.expenditure)
+    print(f"Итого:\n{Clothes().expenditure}")
