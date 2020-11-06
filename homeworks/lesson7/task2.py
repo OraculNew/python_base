@@ -1,4 +1,4 @@
-from abc import abstractmethod
+from abc import ABC, abstractmethod
 """
 PEP-8
 """
@@ -15,9 +15,9 @@ V и H, соответственно.
 # Код программы
 
 
-class Clothes:
+class Clothes(ABC):
     name = ""
-    _clothes_list = []
+    expenditure = 0
 
     def __init__(self, name=""):
         self.name = name
@@ -25,33 +25,15 @@ class Clothes:
     def __str__(self):
         return f"{self.name}"
 
-    @property
-    def expenditure(self):
-        return self.calculate()\
-
-
     @abstractmethod
     def calc(self):
         pass
-
-    def calculate(self):
-        result = 0
-        for itm in self._clothes_list:
-            result = result + itm.calc()
-        return result
-
-    def get_clothes(self):
-        result = ""
-        for itm in self._clothes_list:
-            result = result + f"{str(itm)}" + f"\n"
-        return result
 
 
 class Coat(Clothes):
     def __init__(self, name, size):
         Clothes.__init__(self, name)
         self.size = size
-        super()._clothes_list.append(self)
 
     def __str__(self):
         return f"{self.name} {self.size}"
@@ -64,7 +46,6 @@ class Suit(Clothes):
     def __init__(self, name, height):
         Clothes.__init__(self, name)
         self.height = height
-        super()._clothes_list.append(self)
 
     def __str__(self):
         return f"{self.name} {self.height}"
@@ -86,4 +67,4 @@ if __name__ == "__main__":
     print(clothes2.expenditure)
     print(clothes3.expenditure)
     print(clothes4.expenditure)
-    print(f"Итого:\n{Clothes().expenditure}")
+    print(sum([clothes1.expenditure, clothes2.expenditure, clothes3.expenditure, clothes4.expenditure]))
