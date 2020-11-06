@@ -26,3 +26,64 @@ PEP-8
 строку: *****\n*****\n*****.
 """
 # Код программы
+
+
+class Cell:
+
+    def __init__(self, count):
+        self.count = count
+
+    def __str__(self):
+        return f"Клетка: {self.count}"
+
+    def __add__(self, other):
+        count = self.count + other.count
+        return Cell(count)
+
+    def __sub__(self, other):
+        count = self.count - other.count
+        if count > 0:
+            return Cell(count)
+        else:
+            return ValueError
+
+    def __mul__(self, other):
+        count = self.count * other.count
+        return Cell(count)
+
+    def __truediv__(self, other):
+        count = round(self.count / other.count)
+        return Cell(count)
+
+    def make_order(self, col):
+        f_str = f""
+        if col > 0:
+            row = self.count // col
+            remains = self.count - row * col
+            while row > 0:
+                f_str = f_str + f"{'*' * col}" + f"\n"
+                row -= 1
+            if remains > 0:
+                f_str = f_str + f"{'*' * remains}"
+        return f_str
+
+
+cell1 = Cell(6)
+print(cell1)
+
+cell2 = Cell(6)
+print(cell2)
+
+cell3 = Cell.__add__(cell1, cell2)
+print(cell3)
+
+cell4 = Cell.__sub__(cell3, cell2)
+print(cell4)
+
+cell5 = Cell.__mul__(cell3, cell4)
+print(cell5)
+
+cell6 = Cell.__truediv__(cell5, cell4)
+print(cell6)
+
+print(Cell.make_order(cell6, 5))
