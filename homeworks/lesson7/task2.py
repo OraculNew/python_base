@@ -1,3 +1,4 @@
+from abc import abstractmethod
 """
 PEP-8
 """
@@ -26,9 +27,14 @@ class Clothes:
 
     @property
     def expenditure(self):
-        return self.calc()
+        return self.calculate()\
 
+
+    @abstractmethod
     def calc(self):
+        pass
+
+    def calculate(self):
         result = 0
         for itm in self._clothes_list:
             result = result + itm.calc()
